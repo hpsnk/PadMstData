@@ -1,15 +1,22 @@
+//--------------------------------
+// convertMonsterToJson.js
+//--------------------------------
 const fs = require("fs");
 const CardOfficial = require("../../010_officialData/parseCard");
 const CardPadMst   = require("./CardPadMst.js");
 
+// check 环境变量
 if (process.env.hpsnk_padmst_offical_json_dir == undefined) {
+  console.error("  Set System Environment First.");
+  console.error("    hpsnk_padmst_offical_json_dir");
   process.exit(1);
 }
 
-let DATA_DIR = process.env.hpsnk_padmst_offical_json_dir;
-console.log("  Using DIR %s", DATA_DIR);
+console.log("convertMonsterToJson-->start.");
 
-console.log("Parse Card To TSV-->start.");
+let DATA_DIR = process.env.hpsnk_padmst_offical_json_dir;
+console.log("  USING DATA DIR:");
+console.log("    %s", DATA_DIR);
 
 const strCard = fs.readFileSync(
   DATA_DIR + "/ja-card.json",
@@ -43,12 +50,11 @@ arrayPlayerCard.map((card, idx) => {
   arrayPadMstCard.push(new CardPadMst(card));
 });
 
+fs.writeFileSync("json/monster.json", JSON.stringify(arrayPadMstCard));
+
 console.log();
 console.log(arrayPlayerCard[0]);
 console.log();
 console.log(arrayPlayerCard[arrayPlayerCard.length-1]);
 
-
-fs.writeFileSync("json/monster.json", JSON.stringify(arrayPadMstCard));
-
-console.log("Parse Card To TSV-->end.");
+console.log("convertMonsterToJson-->end.");

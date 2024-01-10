@@ -1,4 +1,3 @@
 @echo off
-@REM node xxx.js
 
-node j020_analyzeMonsterType.js
+node script/j020_analyzeMonsterType.js

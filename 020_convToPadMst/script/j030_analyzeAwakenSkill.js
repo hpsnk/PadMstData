@@ -1,8 +1,13 @@
 //--------------------------------
 // analyzeAwakenSkill.js
 //--------------------------------
-
 const fs = require("fs");
+
+// monster data 存在check
+if (!fs.existsSync("json/monster.json")) {
+  console.error("  Convert Monster First.");
+  process.exit(1);
+}
 
 console.log("analyzeAwakenSkill-->start.");
 
@@ -25,17 +30,22 @@ let arrayUniqueAwakenSkill = Array.from(
 });
 console.log(arrayUniqueAwakenSkill);
 
-// 读取 customer/awakenskill.json
-const strCustomAwakenSkill = fs.readFileSync(
-  "custom/awakenskill.json",
-  "utf-8",
-);
-// 转换成 hashmap
-const jsonCustomAwakenSkill = JSON.parse(strCustomAwakenSkill);
+
 let asMap = [];
-jsonCustomAwakenSkill.forEach(element => {
-  asMap[element.awakenskillId] = element;
-});
+
+// customer/awakenskill.json 存在
+if (fs.existsSync("custom/awakenskill.json")) {
+  // 读取 customer/awakenskill.json
+  const strCustomAwakenSkill = fs.readFileSync(
+    "custom/awakenskill.json",
+    "utf-8",
+  );
+  // 转换成 hashmap
+  const jsonCustomAwakenSkill = JSON.parse(strCustomAwakenSkill);
+  jsonCustomAwakenSkill.forEach(element => {
+    asMap[element.awakenskillId] = element;
+  });
+}
 
 let arrayObjAwakenSkill = arrayUniqueAwakenSkill.map(val => {
   if (asMap[val] != undefined) {
@@ -51,4 +61,3 @@ fs.writeFileSync("json/awakenskill.json", JSON.stringify(arrayObjAwakenSkill));
 
 console.log("analyzeAwakenSkill-->end.");
 
-process.exit(0);

@@ -1,11 +1,13 @@
 //--------------------------------
 // analyzeMonsterType.js
 //--------------------------------
-
 const fs = require("fs");
-const CardOfficial = require("../parseOfficialJson/parseCard");
-const CardPadMst   = require("../parseOfficialJson/CardPadMst");
 
+// monster data 存在check
+if (!fs.existsSync("json/monster.json")) {
+  console.error("  Convert Monster First.");
+  process.exit(1);
+}
 
 console.log("analyzeMonsterType-->start.");
 
@@ -33,40 +35,6 @@ let arrayType = arrayUniqueType.map(valTypeId => {
 });
 console.log(arrayType);
 
-
 fs.writeFileSync("json/monster_type.json", JSON.stringify(arrayType));
 
-
 console.log("analyzeMonsterType-->end.");
-
-process.exit(0);
-
-
-let arrayOfficalCard = jsonCard.card.map((oc, idx) => {
-  return new CardOfficial(oc);
-});
-console.log("  count1:" + arrayOfficalCard.length);
-
-let arrayPlayerCard = arrayOfficalCard.filter((testCard) => {
-  if (testCard.id > 1e5) {
-    return false;
-  }
-  if (testCard.isEmpty) {
-    return false;
-  }
-  if (!testCard.enabled) {
-    return false;
-  }
-  return true;
-});
-console.log("  count2:" + arrayPlayerCard.length);
-
-let arrayPadMstCard = [];
-arrayPlayerCard.map((card, idx) => {
-  arrayPadMstCard.push(new CardPadMst(card));
-});
-
-console.log(JSON.stringify(arrayPadMstCard));
-
-
-console.log("Parse Card To TSV-->end.");

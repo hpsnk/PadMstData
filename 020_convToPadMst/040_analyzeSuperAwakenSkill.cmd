@@ -1,4 +1,3 @@
 @echo off
-@REM node xxx.js
 
-node j040_analyzeSuperAwakenSkill.js
+node script/j040_analyzeSuperAwakenSkill.js

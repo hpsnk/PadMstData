@@ -1,8 +1,13 @@
 //--------------------------------
 // analyzeSuperAwakenSkill.js
 //--------------------------------
-
 const fs = require("fs");
+
+// monster data 存在check
+if (!fs.existsSync("json/monster.json")) {
+  console.error("  Convert Monster First.");
+  process.exit(1);
+}
 
 console.log("analyzeSuperAwakenSkill-->start.");
 
@@ -34,5 +39,3 @@ console.log("  SuperAwakenSkill.size = " + arrayObjSuperAwakenSkill.length);
 fs.writeFileSync("json/superawakenskill.json", JSON.stringify(arrayObjSuperAwakenSkill));
 
 console.log("analyzeSuperAwakenSkill-->end.");
-
-process.exit(0);
