@@ -24,12 +24,12 @@ const strCard = fs.readFileSync(
 );
 
 const jsonCard = JSON.parse(strCard);
-console.log("  card size = %d.", jsonCard.card.length);
+console.log("  Offical Card Size   = %d.", jsonCard.card.length);
 
 let arrayOfficalCard = jsonCard.card.map((oc, idx) => {
   return new CardOfficial(oc);
 });
-console.log("  count1:" + arrayOfficalCard.length);
+// console.log("  count1:" + arrayOfficalCard.length);
 
 let arrayPlayerCard = arrayOfficalCard.filter((testCard) => {
   if (testCard.id > 1e5) {
@@ -43,7 +43,7 @@ let arrayPlayerCard = arrayOfficalCard.filter((testCard) => {
   }
   return true;
 });
-console.log("  count2:" + arrayPlayerCard.length);
+console.log("  PadMst Monster Size = %d.", arrayPlayerCard.length);
 
 let arrayPadMstCard = [];
 arrayPlayerCard.map((card, idx) => {
@@ -52,9 +52,9 @@ arrayPlayerCard.map((card, idx) => {
 
 fs.writeFileSync("json/monster.json", JSON.stringify(arrayPadMstCard));
 
-console.log();
-console.log(arrayPlayerCard[0]);
-console.log();
-console.log(arrayPlayerCard[arrayPlayerCard.length-1]);
+// console.log();
+// console.log(arrayPlayerCard[0]);
+// console.log();
+// console.log(arrayPlayerCard[arrayPlayerCard.length-1]);
 
 console.log("convertMonsterToJson-->end.");

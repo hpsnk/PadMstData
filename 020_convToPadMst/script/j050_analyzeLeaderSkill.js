@@ -24,7 +24,7 @@ const strMonster = fs.readFileSync(
 );
 
 const jsonMonster = JSON.parse(strMonster);
-console.log("  Monster size = %d.", jsonMonster.length);
+console.log("  PadMst Monster Size = %d.", jsonMonster.length);
 
 // 获取所有 leaderskillId
 let arrayId = jsonMonster.map((monster, idx) => {
@@ -35,10 +35,8 @@ let arrayId = jsonMonster.map((monster, idx) => {
 let uniqueArrayId = Array.from(new Set(arrayId.flat(Infinity))).sort(function(a,b){
   return a-b;
 });
-console.log("  LeaderSkill size = %d.", uniqueArrayId.length);
-
-console.log("");
-
+console.log("  LeaderSkill Size = %d.", uniqueArrayId.length);
+// console.log("");
 
 
 // 读取 offical skill json
@@ -47,7 +45,7 @@ const strOfficalSkill = fs.readFileSync(
   "utf-8",
 );
 const jsonOfficalSkill = JSON.parse(strOfficalSkill);
-console.log("  OfficalSkill size = %d.", jsonOfficalSkill.skill.length);
+console.log("  Offical Skill Size = %d.", jsonOfficalSkill.skill.length);
 
 
 // offical skill��û��ID 
@@ -67,6 +65,6 @@ let arrayOfficalLeaderSkill = jsonOfficalSkill.skill.filter((os, idx) => {
 // 保存到 leaderskill.json
 fs.writeFileSync("json/leaderskill.json", JSON.stringify(arrayOfficalLeaderSkill));
 
-console.log("  arrayLeaderSkill size = %d.", arrayOfficalLeaderSkill.length);
+console.log("  LeaderSkill Size = %d.", arrayOfficalLeaderSkill.length);
 
 console.log("analyzeLeaderSkill-->end.");

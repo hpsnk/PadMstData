@@ -17,7 +17,7 @@ const strMonster = fs.readFileSync(
 );
 
 const jsonMonster = JSON.parse(strMonster);
-console.log("  monster size = %d.", jsonMonster.length);
+console.log("  PadMst Monster Size = %d.", jsonMonster.length);
 
 let arrayTpye = jsonMonster.map((monster, idx) => {
   return [monster.typeId, monster.subTypeId, monster.extraTypeId];
@@ -28,12 +28,13 @@ let arrayUniqueType = Array.from(new Set(arrayTpye.flat(Infinity))).filter((type
 }).sort(function(a,b){
   return a-b;
 });
-console.log(arrayUniqueType);
+// console.log(arrayUniqueType);
 
 let arrayType = arrayUniqueType.map(valTypeId => {
   return {typeId : valTypeId}
 });
-console.log(arrayType);
+// console.log(arrayType);
+console.log("  MonsterType Size = %d.", arrayType.length);
 
 fs.writeFileSync("json/monster_type.json", JSON.stringify(arrayType));
 

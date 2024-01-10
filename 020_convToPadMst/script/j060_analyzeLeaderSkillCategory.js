@@ -21,54 +21,23 @@ let arrayTpye = jsonLeaderskill.map((ls, idx) => {
 let arrayUniqueType = Array.from(new Set(arrayTpye.flat(Infinity))).sort(function(a,b){
   return a-b;
 });
-
 console.log("  LeaderskillCategory size = %d.", arrayUniqueType.length);
+// console.log(arrayUniqueType);
 
+let lscMap = [];
 // TODO
+// 读取 custom LeaderSkillCategory
+// 合并数据
 
-process.exit(0);
-
-// 获取所有 leaderskillId
-let arrayId = jsonMonster.map((monster, idx) => {
-  return monster.leaderskillId;
-});
-
-// leaderskillId 去重
-let uniqueArrayId = Array.from(new Set(arrayId.flat(Infinity))).sort(function(a,b){
-  return a-b;
-});
-console.log("  LeaderSkill size = %d.", uniqueArrayId.length);
-
-console.log("");
-
-
-
-// 读取 offical skill json
-const strOfficalSkill = fs.readFileSync(
-  DATA_DIR + "/ja-skill.json",
-  "utf-8",
-);
-const jsonOfficalSkill = JSON.parse(strOfficalSkill);
-console.log("  OfficalSkill size = %d.", jsonOfficalSkill.skill.length);
-
-
-// offical skill��û��ID 
-// ���� leaderskillId ����
-let arrayOfficalLeaderSkill = jsonOfficalSkill.skill.filter((os, idx) => {
-  return uniqueArrayId.includes(idx);
-}).map((os, idx) => {
-  let objSkillOfficial = new SkillOfficial(os);
-  return {
-    leaderskillId: idx,
-    name: objSkillOfficial.name,
-    gameDesc: objSkillOfficial.description,
-    type: objSkillOfficial.type,
+// 保存 leaderskillcategory.json
+let arrayObjLeaderskillType = arrayUniqueType.map(typeId => {
+  if (lscMap[typeId] != undefined) {
+    return lscMap[typeId];
+  } else {
+    return {leaderskillType : typeId}
   }
 });
 
-// 保存到 leaderskill.json
-fs.writeFileSync("json/leaderskill.json", JSON.stringify(arrayOfficalLeaderSkill));
+fs.writeFileSync("json/leaderskillcategory.json", JSON.stringify(arrayObjLeaderskillType));
 
-console.log("  arrayLeaderSkill size = %d.", arrayOfficalLeaderSkill.length);
-
-console.log("analyzeLeaderSkill-->end.");
+console.log("analyzeLeaderSkillCategory-->end.");

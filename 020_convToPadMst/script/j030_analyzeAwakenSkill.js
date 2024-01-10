@@ -17,7 +17,7 @@ const strMonster = fs.readFileSync(
 );
 
 const jsonMonster = JSON.parse(strMonster);
-console.log("  monster size = %d.", jsonMonster.length);
+console.log("  PadMst Monster Size =%d.", jsonMonster.length);
 
 let arrayAwakenSkill = jsonMonster.map((monster, idx) => {
   return monster.awakenskillIds;
@@ -28,11 +28,9 @@ let arrayUniqueAwakenSkill = Array.from(
 ).sort(function(a,b){
   return a-b;
 });
-console.log(arrayUniqueAwakenSkill);
-
+// console.log(arrayUniqueAwakenSkill);
 
 let asMap = [];
-
 // customer/awakenskill.json 存在
 if (fs.existsSync("custom/awakenskill.json")) {
   // 读取 customer/awakenskill.json
@@ -55,9 +53,8 @@ let arrayObjAwakenSkill = arrayUniqueAwakenSkill.map(val => {
   }
 });
 // console.log(arrayObjAwakenSkill);
-console.log("  AwakenSkill.size = " + arrayObjAwakenSkill.length);
+console.log("  AwakenSkill Size = %d.", arrayObjAwakenSkill.length);
 
 fs.writeFileSync("json/awakenskill.json", JSON.stringify(arrayObjAwakenSkill));
 
 console.log("analyzeAwakenSkill-->end.");
-

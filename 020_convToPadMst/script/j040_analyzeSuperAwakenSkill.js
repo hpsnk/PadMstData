@@ -17,7 +17,7 @@ const strMonster = fs.readFileSync(
 );
 
 const jsonMonster = JSON.parse(strMonster);
-console.log("  monster size = %d.", jsonMonster.length);
+console.log("  PadMst Monster Size =%d.", jsonMonster.length);
 
 let arraySuperAwakenSkill = jsonMonster.map((monster, idx) => {
   return monster.superawakenskillIds;
@@ -28,13 +28,13 @@ let arrayUniqueSuperAwakenSkill = Array.from(
 ).sort(function(a,b){
   return a-b;
 });
-console.log(arrayUniqueSuperAwakenSkill);
+// console.log(arrayUniqueSuperAwakenSkill);
 
 let arrayObjSuperAwakenSkill = arrayUniqueSuperAwakenSkill.map(val => {
   return {awakenskillId : val}
 });
 // console.log(arrayObjSuperAwakenSkill);
-console.log("  SuperAwakenSkill.size = " + arrayObjSuperAwakenSkill.length);
+console.log("  SuperAwakenSkill Size = %d.", arrayObjSuperAwakenSkill.length);
 
 fs.writeFileSync("json/superawakenskill.json", JSON.stringify(arrayObjSuperAwakenSkill));
 
