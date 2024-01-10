@@ -20,3 +20,16 @@
 ----
 
 * [机能别入出力一览](./docs/010_IF.md)
+
+----
+
+# 机能别入出力一览
+
+* □j010_convertMonsterToJson.js
+* □j020_analyzeMonsterType.js
+* □j030_analyzeAwakenSkill.js
+* □j040_analyzeSuperAwakenSkill.js
+* □j050_analyzeLeaderSkill.js
+* □j060_analyzeLeaderSkillCategory.js
+* □j070_analyzeSkill.js
+* □j080_analyzeSkillCategory.js

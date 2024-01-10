@@ -1,30 +1,32 @@
 //--------------------------------
-// analyzeLeaderSkill.js
+// analyzeLeaderSkillCategory.js
 //--------------------------------
 const fs = require("fs");
-const SkillOfficial = require("../../010_officialData/parseSkill");
 
-// check 环境变量
-if (process.env.hpsnk_padmst_offical_json_dir == undefined) {
-  console.error("  Set System Environment First.");
-  console.error("    hpsnk_padmst_offical_json_dir");
-  process.exit(1);
-}
+console.log("analyzeLeaderSkillCategory-->start.");
 
-console.log("analyzeLeaderSkill-->start.");
-
-let DATA_DIR = process.env.hpsnk_padmst_offical_json_dir;
-console.log("  USING DATA DIR:");
-console.log("    %s", DATA_DIR);
-
-// 读取 monster 信息
-const strMonster = fs.readFileSync(
-  "json/monster.json",
+// 读取 leaderskill 信息
+const strLeaderskill = fs.readFileSync(
+  "json/leaderskill.json",
   "utf-8",
 );
 
-const jsonMonster = JSON.parse(strMonster);
-console.log("  Monster size = %d.", jsonMonster.length);
+const jsonLeaderskill = JSON.parse(strLeaderskill);
+console.log("  Leaderskill size = %d.", jsonLeaderskill.length);
+
+let arrayTpye = jsonLeaderskill.map((ls, idx) => {
+  return ls.type;
+});
+
+let arrayUniqueType = Array.from(new Set(arrayTpye.flat(Infinity))).sort(function(a,b){
+  return a-b;
+});
+
+console.log("  LeaderskillCategory size = %d.", arrayUniqueType.length);
+
+// TODO
+
+process.exit(0);
 
 // 获取所有 leaderskillId
 let arrayId = jsonMonster.map((monster, idx) => {
