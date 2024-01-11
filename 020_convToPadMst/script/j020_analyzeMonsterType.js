@@ -11,6 +11,7 @@ if (!fs.existsSync("json/monster.json")) {
 
 console.log("analyzeMonsterType-->start.");
 
+// 读取 monster 数据
 const strMonster = fs.readFileSync(
   "json/monster.json",
   "utf-8",
@@ -19,18 +20,18 @@ const strMonster = fs.readFileSync(
 const jsonMonster = JSON.parse(strMonster);
 console.log("  PadMst Monster Size = %d.", jsonMonster.length);
 
-let arrayTpye = jsonMonster.map((monster, idx) => {
+let arrayTpyeId = jsonMonster.map((monster, idx) => {
   return [monster.typeId, monster.subTypeId, monster.extraTypeId];
 });
 
-let arrayUniqueType = Array.from(new Set(arrayTpye.flat(Infinity))).filter((type) => {
-  return type != -1;
+let arrayUniqueTypeId = Array.from(new Set(arrayTpyeId.flat(Infinity))).filter((typeId) => {
+  return typeId != -1;
 }).sort(function(a,b){
   return a-b;
 });
-// console.log(arrayUniqueType);
+// console.log(arrayUniqueTypeId);
 
-let arrayType = arrayUniqueType.map(valTypeId => {
+let arrayType = arrayUniqueTypeId.map(valTypeId => {
   return {typeId : valTypeId}
 });
 // console.log(arrayType);

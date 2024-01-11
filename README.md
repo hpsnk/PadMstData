@@ -16,6 +16,8 @@
 6. leaderskillcategory.json
 7. skill.json
 8. skillcategory.json
+9. collabo.json
+10. series.json
 
 ----
 
@@ -23,13 +25,17 @@
 
 ----
 
-# 机能别入出力一览
+# 机能别状态一览
 
-* □j010_convertMonsterToJson.js
-* □j020_analyzeMonsterType.js
-* □j030_analyzeAwakenSkill.js
-* □j040_analyzeSuperAwakenSkill.js
-* □j050_analyzeLeaderSkill.js
-* □j060_analyzeLeaderSkillCategory.js
-* □j070_analyzeSkill.js
-* □j080_analyzeSkillCategory.js
+| xx                                  | yy  |
+| ---                                 | --- |
+| j010_convertMonsterToJson.js        | yy  |
+| j020_analyzeMonsterType.js          | yy  |
+| j030_analyzeAwakenSkill.js          | yy  |
+| j040_analyzeSuperAwakenSkill.js     | yy  |
+| j050_analyzeLeaderSkill.js          | yy  |
+| j060_analyzeLeaderSkillCategory.js  | yy  |
+| j070_analyzeSkill.js                | yy  |
+| j080_analyzeSkillCategory.js        | yy  |
+| j090_analyzeCollabo.js              | ing |
+| j100_analyzeSeries.js               | yy  |
