@@ -27,15 +27,15 @@
 
 # 机能别状态一览
 
-| xx                                  | yy  |
-| ---                                 | --- |
-| j010_convertMonsterToJson.js        | yy  |
-| j020_analyzeMonsterType.js          | yy  |
-| j030_analyzeAwakenSkill.js          | yy  |
-| j040_analyzeSuperAwakenSkill.js     | yy  |
-| j050_analyzeLeaderSkill.js          | yy  |
-| j060_analyzeLeaderSkillCategory.js  | yy  |
-| j070_analyzeSkill.js                | yy  |
-| j080_analyzeSkillCategory.js        | yy  |
-| j090_analyzeCollabo.js              | ing |
+| xx                                  | yy   |
+| ----------------------------------- | ---- |
+| j010_convertMonsterToJson.js        | yy   |
+| j020_analyzeMonsterType.js          | yy   |
+| j030_analyzeAwakenSkill.js          | yy   |
+| j040_analyzeSuperAwakenSkill.js     | yy   |
+| j050_analyzeLeaderSkill.js          | yy   |
+| j060_analyzeLeaderSkillCategory.js  | yy   |
+| j070_analyzeSkill.js                | ing  |
+| j080_analyzeSkillCategory.js        | yy   |
+| j090_analyzeCollabo.js              | over |
 | j100_analyzeSeries.js               | yy  |
