@@ -5,8 +5,6 @@ const fs = require("fs");
 
 console.log("  Analyze Collabo-->start.");
 
-
-
 // 读取 monster 数据
 const strMonster = fs.readFileSync(
   "json/monster.json",
@@ -31,6 +29,14 @@ let arrayCollabo = arrayUniqueCollaboId.map(valCollaboId => {
   return {collaboId: valCollaboId}
 });
 console.log("  Collabo Size = %d.", arrayCollabo.length);
+
+// 读取 custom/collabo.json
+const strCustomCollabo = fs.readFileSync(
+  "custom/collabo.json",
+  "utf-8",
+);
+const jsonCustomCollabo = JSON.parse(strCustomCollabo);
+console.log("  PadMst Custom Collabo Size = %d.", jsonCustomCollabo.length);
 
 // TODO
 // merge customer定义
