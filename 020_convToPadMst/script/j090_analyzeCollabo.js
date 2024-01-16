@@ -40,6 +40,16 @@ console.log("  PadMst Custom Collabo Size = %d.", jsonCustomCollabo.length);
 
 // TODO
 // merge customer定义
+let xxxMap = [];
+jsonCustomCollabo.forEach(element => {
+  xxxMap[element.collaboId] = element;
+});
+
+arrayCollabo.forEach(element => {
+  if (xxxMap[element.collaboId] != undefined) {
+    element.name = xxxMap[element.collaboId].name;
+  }
+});
 
 fs.writeFileSync("json/collabo.json", JSON.stringify(arrayCollabo));
 

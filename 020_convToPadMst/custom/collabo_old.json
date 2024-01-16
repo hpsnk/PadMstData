@@ -1,0 +1,405 @@
+[{
+	"collaboId": 1,
+	"name": "未チェック",
+	"keyword": "みちぇっく ミチェック"
+}, {
+	"collaboId": 2,
+	"name": "オリジナル",
+	"keyword": "おりじなる　オリジナル"
+}, {
+	"collaboId": 3,
+	"name": "ケリ姫",
+	"keyword": "けりひめこらぼ ケリヒメコラボ"
+}, {
+	"collaboId": 4,
+	"name": "ECO",
+	"keyword": "えここらぼ エココラボ いーしーおーこらぼ イーシーオーコラボ ecoこらぼ ECOこらぼ ecoコラボ ECOコラボ"
+}, {
+	"collaboId": 5,
+	"name": "バットマン",
+	"keyword": "ばっとまんこらぼ バットマンコラボ びーえーびーこらぼ ビーエービーコラボ bab"
+}, {
+	"collaboId": 6,
+	"name": "CoC",
+	"keyword": "しーおーしーこらぼ シーオーシーコラボ くらくらこらぼ クラクラコラボ cocこらぼ COCこらぼ CoCこらぼ  cocコラボ COCコラボ CoCコラボ  "
+}, {
+	"collaboId": 7,
+	"name": "サンリオキャラクターズ",
+	"keyword": "さんりおきゃらくたーずこらぼ サンリオキャラクターズコラボ"
+}, {
+	"collaboId": 8,
+	"name": "アングリーバード",
+	"keyword": "あんぐりーばーどこらぼ アングリーバードコラボ エービーコラボ えーびーこらぼ"
+}, {
+	"collaboId": 9,
+	"name": "パズドラZ",
+	"keyword": "ぱずどらぜっとこらぼ パズドラゼットコラボ ぱずどらZこらぼ パズドラZコラボ "
+}, {
+	"collaboId": 10,
+	"name": "CD",
+	"keyword": "しーでぃーこらぼ シーディーコラボ くりすたるでぃふぇんだーずこらぼ クリスタルディフェンダーズコラボ CDコラボ CDこらぼ cdこらぼ CDコラボ"
+}, {
+	"collaboId": 11,
+	"name": "ドラゴンズドグマ",
+	"keyword": "どらごんずどぐまこらぼ ドラゴンズドグマコラボ でぃーでぃーきゅーこらぼ ディーディーキューコラボ DDQコラボ DDQこらぼ"
+}, {
+	"collaboId": 12,
+	"name": "ぽかぽかアイルー村DX",
+	"keyword": "あいるーでばざーるこらぼ アイルーデバザールコラボ もんはんこらぼ  モンスターハンター "
+}, {
+	"collaboId": 13,
+	"name": "高岡市",
+	"keyword": "たかおかしこらぼ タカオカシコラボ"
+}, {
+	"collaboId": 14,
+	"name": "神羅万象チョコ",
+	"keyword": "しんらばんしょうちょここらぼ シンラバンショウチョココラボ"
+}, {
+	"collaboId": 15,
+	"name": "エヴァ",
+	"keyword": "えゔぁこらぼ エヴァコラボ えゔあこらぼ エヴアコラボ"
+}, {
+	"collaboId": 16,
+	"name": "カピバラさん",
+	"keyword": "かぴばらさんこらぼ カピバラサンコラボ かぴばらこらぼ カピバラコラボ"
+}, {
+	"collaboId": 17,
+	"name": "ラグオデA",
+	"keyword": "らぐおでえーこらぼ ラグオデエーコラボ らぐおでAこらぼ ラグオデAコラボ らぐなろくおでっせい ラグナロクオデッセイ"
+}, {
+	"collaboId": 18,
+	"name": "ポリン",
+	"keyword": "ぽりんのとう ポリンノトウ"
+}, {
+	"collaboId": 19,
+	"name": "太鼓の達人",
+	"keyword": "たいこのたつじんこらぼ タイコノタツジンコラボ たいここらぼ タイココラボ"
+}, {
+	"collaboId": 20,
+	"name": "ガンホー",
+	"keyword": "がんほー ガンホー がんこら ガンコラ"
+}, {
+	"collaboId": 21,
+	"name": "グルーヴコースター",
+	"keyword": "ぐるーゔこーすたーこらぼ グルーヴコースターコラボ "
+}, {
+	"collaboId": 22,
+	"name": "HUNTER×HUNTER",
+	"keyword": "はんたーはんたーこらぼ ハンターハンターコラボ はんたー×はんたーこらぼ ハンター×ハンターコラボ"
+}, {
+	"collaboId": 23,
+	"name": "ぐんまけん",
+	"keyword": "ぐんまけんこらぼ グンマケンコラボ ぐんまこらぼ グンマコラボ"
+}, {
+	"collaboId": 24,
+	"name": "セブン−イレブン",
+	"keyword": "せぶんいれぶんこらぼ セブンイレブンコラボ せぶいれこらぼ セブイレコラボ ぶんぶんこらぼ ブンブンコラボ"
+}, {
+	"collaboId": 25,
+	"name": "ガンホーサンバ",
+	"keyword": "がんほーさんば ガンホーサンバ"
+}, {
+	"collaboId": 26,
+	"name": "サーティワン",
+	"keyword": "さーてぃわんこらぼ サーティワンコラボ 31こらぼ 31コラボ"
+}, {
+	"collaboId": 27,
+	"name": "ファミ通App",
+	"keyword": "ふぁみつうこらぼ ファミツウコラボ"
+}, {
+	"collaboId": 28,
+	"name": "パズバト",
+	"keyword": "ぱずばとこらぼ バズバトコラボ ぱずばとコラボ パズバトこらぼ  "
+}, {
+	"collaboId": 29,
+	"name": "RO",
+	"keyword": "ラグナロクオンラインコラボ らぐなろくおんらいんこらぼ ラグナロクオンラインこらぼ らぐなろくおんらいんコラボ RO あーるおー アールオー ro"
+}, {
+	"collaboId": 30,
+	"name": "BEAMS コラボ",
+	"keyword": "びーむすこらぼ ビームス beams"
+}, {
+	"collaboId": 31,
+	"name": "ドラゴンボール",
+	"keyword": "ドラゴンボール どらごんぼーる"
+}, {
+	"collaboId": 32,
+	"name": "聖闘士星矢",
+	"keyword": "セイントセイヤ せいんとせいや"
+}, {
+	"collaboId": 33,
+	"name": "ビックリマン",
+	"keyword": "ビックリマン　びっくりまん"
+}, {
+	"collaboId": 34,
+	"name": "DCコミックス",
+	"keyword": "でぃーしーこみっくす ディーシーコミックス DC"
+}, {
+	"collaboId": 35,
+	"name": "三国テンカトリガー",
+	"keyword": "さんごくてんかとりがー サンゴクテンカトリガー"
+}, {
+	"collaboId": 36,
+	"name": "北斗の拳",
+	"keyword": "ほくとのけん ホクトノケン"
+}, {
+	"collaboId": 38,
+	"name": "ファイナルファンタジー",
+	"keyword": "ファイナルファンタジー FF ふぁいなるふぁんたじー FINAL FANTASY"
+}, {
+	"collaboId": 39,
+	"name": "デュエル・マスターズ",
+	"keyword": "デュエル・マスターズコラボ でゅえるますたーずこらぼ でゅえるますたーず デュエルマスターズ でゅえま デュエマ"
+}, {
+	"collaboId": 40,
+	"name": "攻殻機動隊 新劇場版",
+	"keyword": "こうかくきどうたいしんげきじょうばんこらぼ コウカクキドウタイシンゲキジョウバンコラボ"
+}, {
+	"collaboId": 41,
+	"name": "進撃の巨人",
+	"keyword": "しんげきのきょじん シンゲキノキョジン しんげき シンゲキ きょじん キョジン "
+}, {
+	"collaboId": 42,
+	"name": "忍者ハットリくん",
+	"keyword": "ハットリくん はっとりくん はっとり ハットリ"
+}, {
+	"collaboId": 43,
+	"name": "サンデーオールスターズ",
+	"keyword": "さんでーおーるすたーずこらぼ さんでー"
+}, {
+	"collaboId": 44,
+	"name": "クローズ",
+	"keyword": "くろーず"
+}, {
+	"collaboId": 45,
+	"name": "BLEACH",
+	"keyword": "ぶりーち ブリーチ BLEACH"
+}, {
+	"collaboId": 46,
+	"name": "パズドラX",
+	"keyword": "パズドラクロス　ぱずどらくろす"
+}, {
+	"collaboId": 47,
+	"name": "逆転裁判6",
+	"keyword": "ぎゃくてんさいばん ギャクテンサイバン"
+}, {
+	"collaboId": 48,
+	"name": "るろうに剣心 コラボ",
+	"keyword": "るろうにけんしん ルロウニケンシン るろけん ルロケン"
+}, {
+	"collaboId": 49,
+	"name": "Pepperコラボ",
+	"keyword": "ぺっぱーこらぼ ペッパーコラボ Pepperこらぼ Pepperコラボ"
+}, {
+	"collaboId": 50,
+	"name": "キン肉マン",
+	"keyword": "きんにくまん キンニクマン"
+}, {
+	"collaboId": 51,
+	"name": "ひるね姫",
+	"keyword": "ひるねひめ"
+}, {
+	"collaboId": 52,
+	"name": "マガジン",
+	"keyword": "まがじん"
+}, {
+	"collaboId": 53,
+	"name": "モンスターハンター",
+	"keyword": "もんはん　モンハン　モンスターハンター　もんすたーはんたー"
+}, {
+	"collaboId": 54,
+	"name": "爆転SHOOT ベイブレードRISING",
+	"keyword": "べいぶれーど　ベイブレード"
+}, {
+	"collaboId": 55,
+	"name": "おぼっちゃまくん",
+	"keyword": "おぼっちゃまくん"
+}, {
+	"collaboId": 56,
+	"name": "ジャスティス・リーグ",
+	"keyword": "じゃすてぃす・りーぐ"
+}, {
+	"collaboId": 57,
+	"name": "鋼の練金術師",
+	"keyword": "はがねのれんきんじゅつし　はがれん　ハガレン"
+}, {
+	"collaboId": 58,
+	"name": "KOF",
+	"keyword": "きんぐおぶふぁいたーず　キングオブファイターズ　けーおーえふ　ケーオーエフ　KOF"
+}, {
+	"collaboId": 59,
+	"name": "爆走兄弟レッツ＆ゴー！！",
+	"keyword": "ばくそうきょうだいれっつ＆ごー　バクソウキョウダイレッツ＆ゴー　レッツ＆ゴー　れっつ＆ごー"
+}, {
+	"collaboId": 60,
+	"name": "幽☆遊☆白書",
+	"keyword": "ゆうはく　ユウハク　ゆうゆうはくしょ　ユウユウハクショ"
+}, {
+	"collaboId": 61,
+	"name": "ペルソナ",
+	"keyword": "ペルソナ　ぺるそな"
+}, {
+	"collaboId": 62,
+	"name": "コロッケ！",
+	"keyword": "ころっけ　コロッケ"
+}, {
+	"collaboId": 63,
+	"name": "マジック：ザ・ギャザリング",
+	"keyword": "まじっく：ざ・ぎゃざりんぐ　マジック：ザ・ギャザリング 　ぎゃざ　ギャザ"
+}, {
+	"collaboId": 64,
+	"name": "実況パワフルプロ野球",
+	"keyword": "じっきょうぱわふるぷろやきゅう　ジッキョウパワフルプロヤキュウ　パワプロ　ぱわぷろ"
+}, {
+	"collaboId": 65,
+	"name": "Android",
+	"keyword": "あんどろいど　アンドロイド　Android"
+}, {
+	"collaboId": 66,
+	"name": "銀魂",
+	"keyword": "ぎんたま　ギンタマ　銀魂"
+}, {
+	"collaboId": 67,
+	"name": "ソードアート・オンライン　コラボ",
+	"keyword": "SAO　そーどあーとおんらいん　ソードアートオンライン"
+}, {
+	"collaboId": 68,
+	"name": "仮面ライダー コラボ",
+	"keyword": "かめんらいだー　仮面ライダー　カメンライダー　"
+}, {
+	"collaboId": 69,
+	"name": "怪物くん",
+	"keyword": "かいぶつくん　カイブツクン"
+}, {
+	"collaboId": 70,
+	"name": "妖怪ウォッチ",
+	"keyword": "ようかいうぉっち　ヨウカイウォッチ"
+}, {
+	"collaboId": 71,
+	"name": "Fate\/stay night [Heaven’s Feel]",
+	"keyword": "ふぇいと　フェイト"
+}, {
+	"collaboId": 72,
+	"name": "ストリートファイターV アーケードエディションコラボ",
+	"keyword": "ストリートファイターV すとりーとふぁいたーV"
+}, {
+	"collaboId": 73,
+	"name": "うまい棒",
+	"keyword": "うまいぼう　ウマイボウ"
+}, {
+	"collaboId": 74,
+	"name": "ゲームセンターあらし",
+	"keyword": "げーむせんたーあらし"
+}, {
+	"collaboId": 75,
+	"name": "マクドナルド",
+	"keyword": ""
+}, {
+	"collaboId": 76,
+	"name": "シャーマンキング",
+	"keyword": "しゃーまんきんぐ"
+}, {
+	"collaboId": 77,
+	"name": "ゾイド",
+	"keyword": "ぞいど"
+}, {
+	"collaboId": 78,
+	"name": "チャンピオン オールスターズ",
+	"keyword": ""
+}, {
+	"collaboId": 79,
+	"name": "サムライスピリッツ",
+	"keyword": "さむらいすぴりっつ さむすぴ サムスピ"
+}, {
+	"collaboId": 80,
+	"name": "富士見ファンタジア文庫レジェンド",
+	"keyword": "ふじみふぁんたじあ"
+}, {
+	"collaboId": 81,
+	"name": "ダッシュ!四駆郎",
+	"keyword": "だっしゅ よんくろう"
+}, {
+	"collaboId": 82,
+	"name": "シンカリオン",
+	"keyword": "しんかりおん"
+}, {
+	"collaboId": 83,
+	"name": "遊戯王",
+	"keyword": "ゆうぎおう　ユウギオウ"
+}, {
+	"collaboId": 84,
+	"name": "ミッキー＆フレンズ",
+	"keyword": "みっきー　ミッキー　でぃずにー　ディズニー"
+}, {
+	"collaboId": 85,
+	"name": "魔神英雄伝ワタル",
+	"keyword": "わたる"
+}, {
+	"collaboId": 86,
+	"name": "DMC",
+	"keyword": "dmc デビルメイクライ　Devil May Cry"
+}, {
+	"collaboId": 87,
+	"name": "僕のヒーローアカデミア",
+	"keyword": "ひろあか　ぼくのひーろーあかでみあ　ヒロアカ　ボクノヒーローアカデミア"
+}, {
+	"collaboId": 88,
+	"name": "鬼滅の刃",
+	"keyword": "きめつのやいば　キメツノヤイバ　鬼滅"
+}, {
+	"collaboId": 89,
+	"name": "コロコロアニキ",
+	"keyword": "ころころあにき"
+}, {
+	"collaboId": 90,
+	"name": "物語シリーズ",
+	"keyword": "ものがたりしりーず"
+}, {
+	"collaboId": 91,
+	"name": "MARVEL",
+	"keyword": "まーべる　マーベル"
+}, {
+	"collaboId": 92,
+	"name": "呪術廻戦",
+	"keyword": "じゅじゅつかいせん"
+}, {
+	"collaboId": 93,
+	"name": "ダイの大冒険",
+	"keyword": "だいのだいぼうけん ダイノダイボウケン だいだい ダイダイ どらくえ ドラクエ どらごんくえすと ドラゴンクエスト"
+}, {
+	"collaboId": 94,
+	"name": "STAR WARS",
+	"keyword": "スターウォーズ　すたーうぉーず　STARWARS"
+}, {
+	"collaboId": 95,
+	"name": "新テニスの王子様",
+	"keyword": "しんてにすのおうじさま　シンテニスノオウジサマ　てにぷり　テニプリ"
+}, {
+	"collaboId": 96,
+	"name": "ワンパンマン",
+	"keyword": "わんぱんまん"
+}, {
+	"collaboId": 97,
+	"name": "ウルトラマン",
+	"keyword": "うるとらまん"
+}, {
+	"collaboId": 98,
+	"name": "ゴーちゃん。",
+	"keyword": "ごーちゃん　ゴーチャン"
+}, {
+	"collaboId": 99,
+	"name": "幻画師",
+	"keyword": "げんがし　ゲンガシ"
+}, {
+	"collaboId": 100,
+	"name": "キングダム",
+	"keyword": "きんぐだむ"
+}, {
+	"collaboId": 101,
+	"name": "ワンピース",
+	"keyword": "ワンピース　わんぴーす"
+}, {
+	"collaboId": 102,
+	"name": "ジョジョの奇妙な冒険",
+	"keyword": "じょじょのきみょうなぼうけん　JOJO"
+}]
