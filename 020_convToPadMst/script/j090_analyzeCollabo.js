@@ -30,24 +30,31 @@ let arrayCollabo = arrayUniqueCollaboId.map(valCollaboId => {
 });
 console.log("  Collabo Size = %d.", arrayCollabo.length);
 
-// 读取 custom/collabo.json
+// 读取 custom/collabo.csv
 const strCustomCollabo = fs.readFileSync(
-  "custom/collabo.json",
+  "custom/collabo.csv",
   "utf-8",
 );
-const jsonCustomCollabo = JSON.parse(strCustomCollabo);
-console.log("  PadMst Custom Collabo Size = %d.", jsonCustomCollabo.length);
+const arrayCustomCollabo = strCustomCollabo.split('\r\n').filter((cc,idx)=>{
+  return !cc.includes('undefined');
+});
+// const jsonCustomCollabo = JSON.parse(strCustomCollabo);
+console.log("  PadMst Custom Collabo Size = %d.", arrayCustomCollabo.length);
 
 // TODO
 // merge customer定义
-let xxxMap = [];
-jsonCustomCollabo.forEach(element => {
-  xxxMap[element.collaboId] = element;
+let customCollaboMap = [];
+arrayCustomCollabo.forEach(element => {
+  let infos = element.split(',');
+  let id    = infos[0];
+  let name  = infos[1];
+  customCollaboMap[id] = name;
 });
+// console.log(customCollaboMap);
 
 arrayCollabo.forEach(element => {
-  if (xxxMap[element.collaboId] != undefined) {
-    element.name = xxxMap[element.collaboId].name;
+  if (customCollaboMap[element.collaboId] != undefined) {
+    element.name = customCollaboMap[element.collaboId];
   }
 });
 
