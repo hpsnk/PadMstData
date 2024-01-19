@@ -30,6 +30,7 @@ let arrayCollabo = arrayUniqueCollaboId.map(valCollaboId => {
 });
 console.log("  Collabo Size = %d.", arrayCollabo.length);
 
+// ----------------------------
 // 读取 custom/collabo.csv
 const strCustomCollabo = fs.readFileSync(
   "custom/collabo.csv",
