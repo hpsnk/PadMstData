@@ -31,11 +31,15 @@
 | ----------------------------------- | ---- |
 | j010_convertMonsterToJson.js        | yy   |
 | j020_analyzeMonsterType.js          | yy   |
-
 | j025_analyzeMonsterAttr.js          | yy   |
 
 | j030_analyzeAwakenSkill.js          | yy   |
 | j040_analyzeSuperAwakenSkill.js     | yy   |
+
+| j031_analyzeAwakenSkill.js          | yy   |
+| j032_analyzeSuperAwakenSkill.js     | yy   |
+| j033_combineAwakenSkill.js          | yy   |
+
 | j050_analyzeLeaderSkill.js          | yy   |
 | j060_analyzeLeaderSkillCategory.js  | yy   |
 | j070_analyzeSkill.js                | ing  |
