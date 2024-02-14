@@ -26,11 +26,12 @@ if %errorlevel% neq 0 (
     echo "030_analyzeAwakenSkill failed"
 )
 
+@REM 合并030里了
 @REM 040_analyzeSuperAwakenSkill
-call cmd /c 040_analyzeSuperAwakenSkill.cmd
-if %errorlevel% neq 0 (
-    echo "040_analyzeSuperAwakenSkill failed"
-)
+@REM call cmd /c 040_analyzeSuperAwakenSkill.cmd
+@REM if %errorlevel% neq 0 (
+@REM     echo "040_analyzeSuperAwakenSkill failed"
+@REM )
 
 @REM 050_analyzeLeaderSkill
 call cmd /c 050_analyzeLeaderSkill.cmd
