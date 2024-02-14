@@ -48,6 +48,11 @@ let arrayUniqueAwakenSkill = Array.from(
 });
 // console.log(arrayUniqueAwakenSkill.length);
 
+// 删除中间文件
+fs.unlinkSync("json/awakenskill.txt");
+fs.unlinkSync("json/superawakenskill.txt");
+
+
 // ----------------------------
 // 读取 custom/awakenskill.csv
 let asMap = [];
