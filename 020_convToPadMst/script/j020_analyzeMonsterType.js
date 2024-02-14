@@ -59,7 +59,7 @@ let arrayType = arrayUniqueTypeId.map(valTypeId => {
   }
 }).sort(function(a,b){
   return a.order-b.order;
-});;
+});
 // console.log(arrayType);
 console.log("  MonsterType Size = %d.", arrayType.length);
 

@@ -14,6 +14,12 @@ if %errorlevel% neq 0 (
     echo "020_analyzeMonsterType failed"
 )
 
+@REM 025_analyzeMonsterAttr
+call cmd /c 025_analyzeMonsterAttr.cmd
+if %errorlevel% neq 0 (
+    echo "025_analyzeMonsterAttr failed"
+)
+
 @REM 030_analyzeAwakenSkill
 call cmd /c 030_analyzeAwakenSkill.cmd
 if %errorlevel% neq 0 (

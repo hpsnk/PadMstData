@@ -29,32 +29,41 @@ let arrayUniqueAwakenSkill = Array.from(
   return a-b;
 });
 // console.log(arrayUniqueAwakenSkill);
+// arrayUniqueAwakenSkill.forEach(id=> {
+//   console.log(id);
+// });
 
+
+// ----------------------------
+// 读取 custom/awakenskill.csv
 let asMap = [];
-// customer/awakenskill.json 存在
-if (fs.existsSync("custom/awakenskill.json")) {
-  // 读取 customer/awakenskill.json
-  const strCustomAwakenSkill = fs.readFileSync(
-    "custom/awakenskill.json",
-    "utf-8",
-  );
-  // 转换成 hashmap
-  const jsonCustomAwakenSkill = JSON.parse(strCustomAwakenSkill);
-  jsonCustomAwakenSkill.forEach(element => {
-    asMap[element.awakenskillId] = element;
-  });
-}
+const strCustomAwakenskill = fs.readFileSync(
+  "custom/awakenskill.csv",
+  "utf-8",
+);
+let customAwakenskillMap = [];
+strCustomAwakenskill.split('\r\n').forEach(element => {
+  let infos = element.split(',');
 
-let arrayObjAwakenSkill = arrayUniqueAwakenSkill.map(val => {
-  if (asMap[val] != undefined) {
-    return asMap[val];
+  let id    = parseInt(infos[0]);
+
+  customAwakenskillMap[id] = {
+    awakenskillId : id,
+    name          : infos[1],
+    gameDesc      : infos[2],
+  };
+});
+
+let arrayAwakenskill = arrayUniqueAwakenSkill.map(valId => {
+  if (customAwakenskillMap[valId] != undefined) {
+    return customAwakenskillMap[valId];
   } else {
-    return {awakenskillId : val}
+    return {awakenskillId : valId}
   }
 });
 // console.log(arrayObjAwakenSkill);
-console.log("  AwakenSkill Size = %d.", arrayObjAwakenSkill.length);
+console.log("  AwakenSkill Size = %d.", arrayAwakenskill.length);
 
-fs.writeFileSync("json/awakenskill.json", JSON.stringify(arrayObjAwakenSkill));
+fs.writeFileSync("json/awakenskill.json", JSON.stringify(arrayAwakenskill));
 
 console.log("analyzeAwakenSkill-->end.");
