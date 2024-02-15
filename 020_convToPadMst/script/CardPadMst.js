@@ -6,9 +6,9 @@
 		card.name = cardOfficial.name;
 
 		//属性1~3
-		card.attr          = cardOfficial.attrs.length>0 ? cardOfficial.attrs[0] : -1;
-		card.subAttr       = cardOfficial.attrs.length>1 ? cardOfficial.attrs[1] : -1;
-		card.thirdAttr     = cardOfficial.attrs.length>2 ? cardOfficial.attrs[2] : -1;
+		card.attr          = cardOfficial.attrs.length > 0 ? cardOfficial.attrs[0] : -1;
+		card.subAttr       = cardOfficial.attrs.length > 1 ? cardOfficial.attrs[1] : -1;
+		card.thirdAttr     = cardOfficial.attrs.length > 2 ? cardOfficial.attrs[2] : -1;
 
 		card.typeId        = cardOfficial.types.length > 0 ? cardOfficial.types[0] : -1;
 		card.subTypeId     = cardOfficial.types.length > 1 ? cardOfficial.types[1] : -1;
