@@ -2,7 +2,7 @@
 	constructor(cardOfficial) {
 		let card = this;
 
-		card.monsterId = cardOfficial.fixId;
+		card.monsterId = cardOfficial.id;
 		card.name = cardOfficial.name;
 
 		//属性1~3

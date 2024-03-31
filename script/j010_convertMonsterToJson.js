@@ -30,6 +30,7 @@ let arrayOfficalCard = jsonCard.card.map((oc, idx) => {
   return new CardOfficial(oc);
 });
 // console.log("  count1:" + arrayOfficalCard.length);
+// console.log("  " + JSON.stringify(arrayOfficalCard[1]));
 
 let arrayPlayerCard = arrayOfficalCard.filter((testCard) => {
   if (testCard.id > 1e5) {
