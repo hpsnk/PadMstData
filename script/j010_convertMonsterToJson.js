@@ -32,8 +32,9 @@ let arrayOfficalCard = jsonCard.card.map((oc, idx) => {
 // console.log("  count1:" + arrayOfficalCard.length);
 // console.log("  " + JSON.stringify(arrayOfficalCard[1]));
 
+// 排除怪物
 let arrayPlayerCard = arrayOfficalCard.filter((testCard) => {
-  if (testCard.id > 1e5) {
+  if (testCard.id > 50000) {
     return false;
   }
   if (testCard.isEmpty) {
@@ -53,7 +54,8 @@ arrayPlayerCard.map((card, idx) => {
 
 fs.writeFileSync("../json/monster.json", JSON.stringify(arrayPadMstCard));
 
-// console.log();
+// console.log("   Total Monster Size : %d", arrayPadMstCard.length);
+// console.log("   Max Monster id     : %d", arrayPadMstCard.at(-1).monsterId);
 // console.log(arrayPlayerCard[0]);
 // console.log();
 // console.log(arrayPlayerCard[arrayPlayerCard.length-1]);
