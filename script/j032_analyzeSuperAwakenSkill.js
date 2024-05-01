@@ -1,18 +1,23 @@
 //--------------------------------
 // analyzeSuperAwakenSkill.js
 //--------------------------------
-
 const fs = require("fs");
+
+// monster data 存在check
+if (!fs.existsSync("../json/monster.json")) {
+  console.error("  Convert Monster First.");
+  process.exit(1);
+}
 
 console.log("analyzeSuperAwakenSkill-->start.");
 
 const strMonster = fs.readFileSync(
-  "json/monster.json",
+  "../json/monster.json",
   "utf-8",
 );
 
 const jsonMonster = JSON.parse(strMonster);
-console.log("  monster size = %d.", jsonMonster.length);
+console.log("  PadMst Monster Size =%d.", jsonMonster.length);
 
 let arraySuperAwakenSkill = jsonMonster.map((monster, idx) => {
   return monster.superawakenskillIds;
@@ -23,16 +28,8 @@ let arrayUniqueSuperAwakenSkill = Array.from(
 ).sort(function(a,b){
   return a-b;
 });
-console.log(arrayUniqueSuperAwakenSkill);
+// console.log(arrayUniqueSuperAwakenSkill);
 
-let arrayObjSuperAwakenSkill = arrayUniqueSuperAwakenSkill.map(val => {
-  return {awakenskillId : val}
-});
-// console.log(arrayObjSuperAwakenSkill);
-console.log("  SuperAwakenSkill.size = " + arrayObjSuperAwakenSkill.length);
-
-fs.writeFileSync("json/superawakenskill.json", JSON.stringify(arrayObjSuperAwakenSkill));
+fs.writeFileSync("../json/superawakenskill.txt", JSON.stringify(arrayUniqueSuperAwakenSkill));
 
 console.log("analyzeSuperAwakenSkill-->end.");
-
-process.exit(0);
