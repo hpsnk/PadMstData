@@ -27,6 +27,11 @@
 
 		card.awakenskillIds      = cardOfficial.awakenings;
 		card.superawakenskillIds = cardOfficial.superAwakenings;
+
+		//进化
+		card.evoBaseId           = cardOfficial.evoBaseId;
+		card.evoMaterials        = cardOfficial.evoMaterials;
+		card.evoRootId           = cardOfficial.evoRootId;
 	}
 
 }
