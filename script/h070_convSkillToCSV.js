@@ -19,10 +19,18 @@ const strSkill = fs.readFileSync(
 const jsonSkill = JSON.parse(strSkill);
 console.log("  PadMst Skill Size = %d.", jsonSkill.length);
 
-fs.writeFileSync('skill.csv', util.format("%s\t%s\t%s\t%s\t%s\n", 'skillId', 'name', 'gameDesc', 'initTurn', 'maxLv'));
+fs.writeFileSync('../csv/skill.csv', 
+  util.format("%s\t%s\t%s\t%s\t%s\n", 
+  'skillId', 
+  'name', 
+  'gameDesc', 
+  'initTurn', 
+  'maxLv')
+);
 
 jsonSkill.forEach(objSkill => {
-  fs.appendFileSync('skill.csv', util.format("%s\t%s\t%s\t%d\t%d\n", 
+  fs.appendFileSync('../csv/skill.csv', 
+    util.format("%s\t%s\t%s\t%d\t%d\n", 
     objSkill.skillId, 
     objSkill.name, 
     objSkill.gameDesc.replace(/[\n\[\]]/g, ''), 
