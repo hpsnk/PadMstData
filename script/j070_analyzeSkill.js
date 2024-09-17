@@ -1,6 +1,8 @@
 //--------------------------------
 // analyzeSkill.js
 //--------------------------------
+const AppUtil   = require("./common/AppUtil.js");
+
 const fs = require("fs");
 const SkillOfficial = require("./PADDashFormation/parseSkill");
 const PadMstSkill   = require("./PadMstSkill");
@@ -14,7 +16,8 @@ if (process.env.hpsnk_padmst_offical_json_dir == undefined) {
 
 console.log("analyzeSkill-->start.");
 
-let DATA_DIR = process.env.hpsnk_padmst_offical_json_dir;
+// let DATA_DIR = process.env.hpsnk_padmst_offical_json_dir;
+let DATA_DIR = AppUtil.getInJsonDir();
 console.log("  USING DATA DIR:");
 console.log("    %s", DATA_DIR);
 

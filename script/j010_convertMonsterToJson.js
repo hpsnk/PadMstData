@@ -1,22 +1,24 @@
 //--------------------------------
 // convertMonsterToJson.js
 //--------------------------------
+const AppUtil   = require("./common/AppUtil.js");
+
 const fs = require("fs");
 const CardOfficial = require("../script/PADDashFormation/parseCard.js");
 const CardPadMst   = require("./CardPadMst.js");
 
-// check 环境变量
-if (process.env.hpsnk_padmst_offical_json_dir == undefined) {
-  console.error("  Set System Environment First.");
-  console.error("    hpsnk_padmst_offical_json_dir");
-  process.exit(1);
-}
+// // check 环境变量
+// if (process.env.hpsnk_padmst_offical_json_dir == undefined) {
+//   console.error("  Set System Environment First.");
+//   console.error("    hpsnk_padmst_offical_json_dir");
+//   process.exit(1);
+// }
 
 console.log("convertMonsterToJson-->start.");
 
-let DATA_DIR = process.env.hpsnk_padmst_offical_json_dir;
-console.log("  USING DATA DIR:");
-console.log("    %s", DATA_DIR);
+// let DATA_DIR = EnvironmentUtil.getValue("hpsnk_padmst_master_dir") + "/monsters-info/official-API/";
+let DATA_DIR = AppUtil.getInJsonDir();
+console.log("  [Input ] %s", DATA_DIR);
 
 const strCard = fs.readFileSync(
   DATA_DIR + "/ja-card.json",
@@ -52,6 +54,7 @@ arrayPlayerCard.map((card, idx) => {
   arrayPadMstCard.push(new CardPadMst(card));
 });
 
+console.log("  [Output] %s", "../json/monster.json");
 fs.writeFileSync("../json/monster.json", JSON.stringify(arrayPadMstCard));
 
 // console.log("   Total Monster Size : %d", arrayPadMstCard.length);
