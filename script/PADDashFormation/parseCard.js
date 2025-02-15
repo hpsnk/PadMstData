@@ -76,9 +76,9 @@ class Card{
 		card.flags = flags;
 		card.canAssist = Boolean(flags & 1<<0); //是否能当二技
 		card.enabled = Boolean(flags & 1<<1); //是否已启用
-		card.stacking = !Boolean(flags & 1<<3) && //flag有1<<3时，不合并占一格，没有时则根据类型进行合并（目前合并已经不占格子）
+		card.stackable = !Boolean(flags & 1<<3) && //flag有1<<3时，强制不合并，独立占一格。没有时则根据类型进行合并（目前合并已经不占格子）
 			card.types.some(t=>[0,12,14,15].includes(t)); //0進化用;12能力覺醒用;14強化合成用;15販賣用默认合并
-		//card.onlyAssist = Boolean(flags & 1<<4); //是否只能当二技
+		card.onlyAssist = Boolean(flags & 1<<4); //是否只能当二技
 		card.is8Latent = Boolean(flags & 1<<5); //是否支持8个潜觉
 		card.skillBanner = Boolean(flags & 1<<6); //是否有技能横幅
 
@@ -88,10 +88,19 @@ class Card{
 		card.orbSkinOrBgmId = data[i++]; //抽到后珠子皮肤ID
 		card.specialAttribute = data[i++]; //特别属性，比如黄龙
 		card.searchFlags = [data[i++], data[i++]]; //队长技搜索类型，解析写在这里会导致文件太大，所以写到前端去了
-		card.gachaId = data[i++]; //目前猜测是桶ID
+		card.gachaGroupsFlag = data[i++]; //目前猜测是桶ID
 		card.unk08 = data[i++]; //未知08
 		card.attrs.push(data[i++]); //属性3
 		card.badgeId = data[i++]; //抽到后获取的徽章ID
+		card.syncAwakening = data[i++]; //同步觉醒
+		const numSyncAkCondition = data[i++]; //同步觉醒条件数量
+
+		//同步觉醒条件
+		card.syncAwakeningConditions = Array.from(new Array(numSyncAkCondition ?? 0)).map(() => ({
+			id: Card.fixId(data[i++]), //怪物ID
+			level: data[i++], //怪物等级
+			skillLeval: data[i++], //怪物技能等级
+		}));
 		
 		card.attrs = card.attrs.filter(Number.isInteger);
 		if (card.attrs.indexOf(-1)>0)

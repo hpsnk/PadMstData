@@ -112,3 +112,5 @@ echo [090]Analyze Collabo end.
 echo .
 
 cd ..
+
+pause

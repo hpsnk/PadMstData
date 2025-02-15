@@ -63,6 +63,8 @@ let arrayType = arrayUniqueTypeId.map(valTypeId => {
 // console.log(arrayType);
 console.log("  MonsterType Size = %d.", arrayType.length);
 
+
+console.log("     [Output] %s", "../json/monster_type.json");
 fs.writeFileSync("../json/monster_type.json", JSON.stringify(arrayType));
 
 console.log("analyzeMonsterType-->end.");

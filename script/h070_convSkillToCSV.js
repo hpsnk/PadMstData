@@ -1,23 +1,56 @@
 //--------------------------------
-// analyzeSkill.js
+// h070_convSkillToCSV.js
+//
+// convert skill.json to skill.csv
 //--------------------------------
-const AppUtil   = require("./common/AppUtil.js");
 
 const fs = require("fs");
-const SkillOfficial = require("./PADDashFormation/parseSkill");
-const PadMstSkill   = require("./PadMstSkill");
+const util = require("util");
 
-// check 环境变量
-if (process.env.hpsnk_padmst_offical_json_dir == undefined) {
-  console.error("  Set System Environment First.");
-  console.error("    hpsnk_padmst_offical_json_dir");
-  process.exit(1);
-}
+console.log("convSkillToCSV-->start.");
 
-console.log("analyzeSkill-->start.");
+// 读取 skill 信息
+const strSkill = fs.readFileSync(
+  "../json/skill.json",
+  "utf-8",
+);
 
-// let DATA_DIR = process.env.hpsnk_padmst_offical_json_dir;
-let DATA_DIR = AppUtil.getInJsonDir();
+// 转换成 json
+const jsonSkill = JSON.parse(strSkill);
+console.log("  PadMst Skill Size = %d.", jsonSkill.length);
+
+fs.writeFileSync('../csv/skill.csv', 
+  util.format("%s\t%s\t%s\t%s\t%s\n", 
+  'skillId', 
+  'name', 
+  'gameDesc', 
+  'initTurn', 
+  'maxLv')
+);
+
+jsonSkill.forEach(objSkill => {
+  fs.appendFileSync('../csv/skill.csv', 
+    util.format("%s\t%s\t%s\t%d\t%d\n", 
+    objSkill.skillId, 
+    objSkill.name, 
+    objSkill.gameDesc.replace(/[\n\[\]]/g, ''), 
+    objSkill.initTurn,
+    objSkill.maxLv));
+});
+
+process.exit(0);
+
+
+
+
+
+
+
+
+
+
+
+let DATA_DIR = process.env.hpsnk_padmst_offical_json_dir;
 console.log("  USING DATA DIR:");
 console.log("    %s", DATA_DIR);
 

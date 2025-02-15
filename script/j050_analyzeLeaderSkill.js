@@ -1,20 +1,23 @@
 //--------------------------------
 // analyzeLeaderSkill.js
 //--------------------------------
+const AppUtil   = require("./common/AppUtil.js");
+
 const fs = require("fs");
 const SkillOfficial = require("./PADDashFormation/parseSkill");
 const PadMstSkill   = require("./PadMstSkill");
 
 // check 环境变量
-if (process.env.hpsnk_padmst_offical_json_dir == undefined) {
-  console.error("  Set System Environment First.");
-  console.error("    hpsnk_padmst_offical_json_dir");
-  process.exit(1);
-}
+// if (process.env.hpsnk_padmst_offical_json_dir == undefined) {
+//   console.error("  Set System Environment First.");
+//   console.error("    hpsnk_padmst_offical_json_dir");
+//   process.exit(1);
+// }
 
 console.log("analyzeLeaderSkill-->start.");
 
-let DATA_DIR = process.env.hpsnk_padmst_offical_json_dir;
+// let DATA_DIR = process.env.hpsnk_padmst_offical_json_dir;
+let DATA_DIR = AppUtil.getInJsonDir();
 console.log("  USING DATA DIR:");
 console.log("    %s", DATA_DIR);
 

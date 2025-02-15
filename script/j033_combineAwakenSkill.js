@@ -70,19 +70,44 @@ strCustomAwakenskill.split('\r\n').forEach(element => {
     awakenskillId : id,
     name          : infos[1],
     gameDesc      : infos[2],
+    row           : infos[3],    //行
+    column        : infos[4],    //列
+    index         : parseInt(infos[3]) * 10 + parseInt(infos[4])
   };
 });
 
+
+// 
+var newAwakenSkillCount = 0;
+
 let arrayAwakenskill = arrayUniqueAwakenSkill.map(valId => {
   if (customAwakenskillMap[valId] != undefined) {
+    // custom/awakenskill.csvに存在する
+
     return customAwakenskillMap[valId];
   } else {
+    // custom/awakenskill.csvに存在しない
+    newAwakenSkillCount++;
+
     return {awakenskillId : valId}
   }
 });
+
 // console.log(arrayObjAwakenSkill);
-console.log("  AwakenSkill Size = %d.", arrayAwakenskill.length);
+console.log("  AwakenSkill Size             = %d.", arrayAwakenskill.length);
+
+if (newAwakenSkillCount>0) {
+console.log("  New AwakenSkill Size         = %d.", newAwakenSkillCount);
+}
 
 fs.writeFileSync("../json/awakenskill.json", JSON.stringify(arrayAwakenskill));
 
 console.log("analyzeAwakenSkill-->end.");
+
+
+process.exitCode = newAwakenSkillCount;
+
+// 有新的AwakenSkill
+// if (newAwakenSkillCount>0) {
+//   process.exitCode = 1;
+// }
