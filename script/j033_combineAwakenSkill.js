@@ -100,14 +100,10 @@ if (newAwakenSkillCount>0) {
 console.log("  New AwakenSkill Size         = %d.", newAwakenSkillCount);
 }
 
+// 写入json/awakenskill.json
 fs.writeFileSync("../json/awakenskill.json", JSON.stringify(arrayAwakenskill));
 
 console.log("analyzeAwakenSkill-->end.");
 
-
+// 有新的AwakenSkill时，终了CODE = 新AwakenSkill个数
 process.exitCode = newAwakenSkillCount;
-
-// 有新的AwakenSkill
-// if (newAwakenSkillCount>0) {
-//   process.exitCode = 1;
-// }
