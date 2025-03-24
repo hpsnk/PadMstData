@@ -20,6 +20,9 @@
 		card.maxHP         = cardOfficial.hp.max;
 		card.maxATK        = cardOfficial.atk.max;
 		card.maxRCV        = cardOfficial.rcv.max;
+
+		card.mp            = cardOfficial.sellMP;
+
 		card.collaboId     = cardOfficial.collabId;
 		card.seriesId      = cardOfficial.seriesId;
 		card.skillId       = cardOfficial.activeSkillId;
