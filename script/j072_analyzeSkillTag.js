@@ -1,9 +1,15 @@
 //--------------------------------
-// j071_analyzeSkillTag.js
+// j072_analyzeSkillTag.js
 //--------------------------------
 const fs = require("fs");
 
-console.log("  Analyze SkillTag-->start.");
+const logger = require('../util/Logger.js');
+
+//----------------------------------------------------------------
+// 获取批处理传入的第一个参数
+const execProgram = process.argv[2];
+
+logger.info(execProgram, "Analyze SkillTag-->start.")
 
 // 读取 custom/collabo.csv
 const strCustomSkillTag = fs.readFileSync(
@@ -14,7 +20,7 @@ const arrayCustomSkillTag = strCustomSkillTag.split('\r\n').filter((str,idx)=>{
   // 过滤，去除csv文件第一行的表头信息
   return idx>0;
 });
-console.log("  PadMst Custom SkillTag Size = %d.", arrayCustomSkillTag.length);
+logger.info(execProgram, `PadMst Custom SkillTag Size = ${arrayCustomSkillTag.length}.`)
 
 // 转换成 object
 let arraySkillTag = arrayCustomSkillTag.map(element => {
@@ -28,4 +34,4 @@ let arraySkillTag = arrayCustomSkillTag.map(element => {
 
 fs.writeFileSync("../json/skill_tag.json", JSON.stringify(arraySkillTag));
 
-console.log("  Analyze SkillTag-->end.");
+logger.info(execProgram, "Analyze SkillTag-->end.")

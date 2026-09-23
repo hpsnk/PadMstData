@@ -4,22 +4,26 @@
 const AppUtil   = require("./common/AppUtil.js");
 
 const fs = require("fs");
-const SkillOfficial = require("./PADDashFormation/parseSkill");
-const PadMstSkill   = require("./PadMstSkill");
+const SkillOfficial = require("./PADDashFormation/parseSkill.js");
+const PadMstSkill   = require("./PadMstSkill.js");
+
+const logger = require('../util/Logger.js');
+
+//----------------------------------------------------------------
+// 获取批处理传入的第一个参数
+const execProgram = process.argv[2];
 
 // check 环境变量
-if (process.env.hpsnk_padmst_offical_json_dir == undefined) {
-  console.error("  Set System Environment First.");
-  console.error("    hpsnk_padmst_offical_json_dir");
+if (process.env.hpsnk_padmst_master_dir == undefined) {
+  logger.error(execProgram, "Set System Environment['hpsnk_padmst_master_dir'] First.");
   process.exit(1);
 }
 
-console.log("analyzeSkill-->start.");
+logger.info(execProgram, "Analyze Skill-->start.")
 
 // let DATA_DIR = process.env.hpsnk_padmst_offical_json_dir;
 let DATA_DIR = AppUtil.getInJsonDir();
-console.log("  USING DATA DIR:");
-console.log("    %s", DATA_DIR);
+logger.debug(execProgram, `Using data dir: ${DATA_DIR}.`)
 
 // 读取 monster 信息
 const strMonster = fs.readFileSync(
@@ -28,7 +32,7 @@ const strMonster = fs.readFileSync(
 );
 
 const jsonMonster = JSON.parse(strMonster);
-console.log("  PadMst Monster Size = %d.", jsonMonster.length);
+logger.info(execProgram, `PadMst Monster Size = ${jsonMonster.length}.`)
 
 // 获取所有 skillId
 let arrayId = jsonMonster.map((monster, idx) => {
@@ -39,9 +43,7 @@ let arrayId = jsonMonster.map((monster, idx) => {
 let uniqueArrayId = Array.from(new Set(arrayId.flat(Infinity))).sort(function(a,b){
   return a-b;
 });
-console.log("  Skill Size = %d.", uniqueArrayId.length);
-// console.log("");
-
+logger.info(execProgram, `Skill Size = ${uniqueArrayId.length}.`)
 
 // 读取 offical skill json
 const strOfficalSkill = fs.readFileSync(
@@ -49,11 +51,10 @@ const strOfficalSkill = fs.readFileSync(
   "utf-8",
 );
 const jsonOfficalSkill = JSON.parse(strOfficalSkill);
-console.log("  Offical Skill Size = %d.", jsonOfficalSkill.skill.length);
-
+logger.info(execProgram, `Offical Skill Size = ${jsonOfficalSkill.skill.length}.`)
 
 // 
-let arrayPadMstSkill = jsonOfficalSkill.skill.map((os, idx) => {
+let arrayPadMstSkill = jsonOfficalSkill.skill.map((os, idx) => {  
   let objSkillOfficial = new SkillOfficial(idx, os);
 
   let objPadMstSkill = new PadMstSkill(objSkillOfficial);
@@ -71,6 +72,6 @@ let arrayPadMstSkill = jsonOfficalSkill.skill.map((os, idx) => {
 // 保存到 leaderskill.json
 fs.writeFileSync("../json/skill.json", JSON.stringify(arrayPadMstSkill));
 
-console.log("  Skill Size = %d.", arrayPadMstSkill.length);
+logger.info(execProgram, `Skill Size = ${arrayPadMstSkill.length}.`)
 
-console.log("analyzeSkill-->end.");
+logger.info(execProgram, "Analyze Skill-->end.")
