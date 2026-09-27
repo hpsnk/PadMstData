@@ -1,10 +1,8 @@
 const EnvironmentUtil   = require("./EnvironmentUtil.js");
 
 class AppUtil {
-
   static getInJsonDir(key) {
-	
-	return EnvironmentUtil.getValue("hpsnk_padmst_master_dir") + "/monsters-info/official-API/";
+	  return EnvironmentUtil.getValue("hpsnk_padmst_master_dir") + "/monsters-info/official-API/";
   }
 }
 

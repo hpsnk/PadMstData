@@ -1,4 +1,8 @@
 @echo off
+setlocal enabledelayedexpansion
+
+:: 切换工作路径到当前脚本所在目录
+cd /d "%~dp0"
 
 @REM // 解析 觉醒
 node ../script/j031_analyzeAwakenSkill.js

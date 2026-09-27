@@ -32,8 +32,8 @@ console.log("  Series Size = %d.", arraySeries.length);
 
 // todo
 // 读取 custom/series.csv
-// const strCustomCollabo = fs.readFileSync(
-//   "custom/collabo.csv",
+// const strCustomSeries = fs.readFileSync(
+//   "custom/series.csv",
 //   "utf-8",
 // );
 // const arrayCustomCollabo = strCustomCollabo.split('\r\n').filter((cc,idx)=>{

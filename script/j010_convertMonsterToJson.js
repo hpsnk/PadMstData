@@ -7,6 +7,8 @@ const fs = require("fs");
 const CardOfficial = require("../script/PADDashFormation/parseCard.js");
 const CardPadMst   = require("./CardPadMst.js");
 
+
+// ------------------------------------------------------------------------
 // // check 环境变量
 // if (process.env.hpsnk_padmst_offical_json_dir == undefined) {
 //   console.error("  Set System Environment First.");
@@ -16,7 +18,6 @@ const CardPadMst   = require("./CardPadMst.js");
 
 console.log("convertMonsterToJson-->start.");
 
-// let DATA_DIR = EnvironmentUtil.getValue("hpsnk_padmst_master_dir") + "/monsters-info/official-API/";
 let DATA_DIR = AppUtil.getInJsonDir();
 console.log("  [Input ] %s", DATA_DIR);
 
