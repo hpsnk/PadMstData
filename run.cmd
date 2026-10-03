@@ -1,116 +1,72 @@
 @echo off
+setlocal enabledelayedexpansion
 
+:: 切换控制台代码页为 UTF-8 并隐藏输出
+chcp 65001 > nul
+
+:: 确保工作路径始终以当前脚本所在目录为准
+cd /d "%~dp0"
+
+:: 检查是否存在 cmd 目录
+if not exist "cmd" (
+    echo [ERROR] cmd 目录不存在！
+    exit /b 1
+)
+
+:: 进入工作目录
 cd cmd
 
-@REM 010_convertMonster
-@REM ---------------------------------------
-echo [010]Convert Monster start.
-call cmd /c 010_convertMonster.cmd
-if %errorlevel% neq 0 (
-    echo "010_convertMonster failed"
-    cd ..
-    exit /b
-) 
-echo [010]Convert Monster end.
-echo .
+:: --------------------------------------------------
+:: 依次执行各任务 (步骤编号, 显示名称, 脚本文件名)
+:: --------------------------------------------------
+call :run_step "010" "Convert Monster start"       "010_convertMonster.cmd" || goto :ERROR
+call :run_step "020" "Analyze Monster Type"        "020_analyzeMonsterType.cmd" || goto :ERROR
+call :run_step "025" "Analyze Monster Attr"        "025_analyzeMonsterAttr.cmd" || goto :ERROR
+call :run_step "030" "Analyze Monster AwakenSkill" "030_analyzeAwakenSkill.cmd" || goto :ERROR
+call :run_step "050" "Analyze LeaderSkill"         "050_analyzeLeaderSkill.cmd" || goto :ERROR
+call :run_step "060" "Analyze LeaderSkillCategory" "060_analyzeLeaderSkillCategory.cmd" || goto :ERROR
+call :run_step "070" "Analyze Skill"               "070_analyzeSkill.cmd" || goto :ERROR
+call :run_step "090" "Analyze Collabo"             "090_analyzeCollabo.cmd" || goto :ERROR
+call :run_step "100" "Analyze Serie"               "100_analyzeSeries.cmd" || goto :ERROR
 
-@REM 020_analyzeMonsterType
-@REM ---------------------------------------
-echo [020]Analyze Monster Type start.
-call cmd /c 020_analyzeMonsterType.cmd
-if %errorlevel% neq 0 (
-    echo "020_analyzeMonsterType failed"
-    cd ..
-    exit /b
+:: --------------------------------------------------
+:: 执行完成
+:: --------------------------------------------------
+echo [ALL SUCCESS] 所有任务执行完毕！
+cd ..
+exit /b 0
+
+:: --------------------------------------------------
+:: 子函数：执行单个任务模块
+:: --------------------------------------------------
+:run_step
+set "STEP_NUM=%~1"
+set "STEP_NAME=%~2"
+set "SCRIPT_FILE=%~3"
+
+echo [%STEP_NUM%] %STEP_NAME% start.
+
+if not exist "%SCRIPT_FILE%" (
+    echo [ERROR] 找不到脚本: %SCRIPT_FILE%
+    exit /b 1
 )
-echo [020]Analyze Monster Type end.
-echo .
 
-@REM 025_analyzeMonsterAttr
-@REM ---------------------------------------
-echo [025]Analyze Monster Attr start.
-call cmd /c 025_analyzeMonsterAttr.cmd
-if %errorlevel% neq 0 (
-    echo "025_analyzeMonsterAttr failed"
-    cd ..
-    exit /b
+call "%SCRIPT_FILE%"
+if !errorlevel! neq 0 (
+    echo [ERROR] 010_convertMonster.cmd 执行失败 ^(错误码: !errorlevel!^)
+    exit /b 1
 )
-echo [025]Analyze Monster Attr end.
-echo .
 
+echo [%STEP_NUM%] %STEP_NAME% end.
+echo.
+exit /b 0
 
-@REM 030_analyzeAwakenSkill
-@REM ---------------------------------------
-echo [030]Analyze Monster AwakenSkill start.
-call cmd /c 030_analyzeAwakenSkill.cmd
-if %errorlevel% neq 0 (
-    echo "030_analyzeAwakenSkill failed"
-    cd ..
-    exit /b
-)
-echo [030]Analyze Monster AwakenSkill end.
-echo .
-
-
-@REM 合并030里了
-@REM 040_analyzeSuperAwakenSkill
-@REM call cmd /c 040_analyzeSuperAwakenSkill.cmd
-@REM if %errorlevel% neq 0 (
-@REM     echo "040_analyzeSuperAwakenSkill failed"
-@REM )
-
-
-@REM 050_analyzeLeaderSkill
-@REM ---------------------------------------
-echo [050]Analyze LeaderSkill start.
-call cmd /c 050_analyzeLeaderSkill.cmd
-if %errorlevel% neq 0 (
-    echo "050_analyzeLeaderSkill failed"
-    cd ..
-    exit /b
-)
-echo [050]Analyze LeaderSkill end.
-echo .
-
-
-@REM 060_analyzeLeaderSkillCategory
-@REM ---------------------------------------
-echo [060]Analyze LeaderSkillCategory start.
-call cmd /c 060_analyzeLeaderSkillCategory.cmd
-if %errorlevel% neq 0 (
-    echo "060_analyzeLeaderSkillCategory failed"
-    cd ..
-    exit /b
-)
-echo [060]Analyze LeaderSkillCategory end.
-echo .
-
-
-@REM 070_analyzeSkill
-@REM ---------------------------------------
-echo [070]Analyze Skill start.
-call cmd /c 070_analyzeSkill.cmd
-if %errorlevel% neq 0 (
-    echo "070_analyzeSkill failed"
-    cd ..
-    exit /b
-)
-echo [070]Analyze Skill end.
-echo .
-
-
-@REM 090_analyzeCollabo
-@REM ---------------------------------------
-echo [090]Analyze Collabo start.
-call cmd /c 090_analyzeCollabo.cmd
-if %errorlevel% neq 0 (
-    echo "090_analyzeCollabo failed"
-    cd ..
-    exit /b
-)
-echo [090]Analyze Collabo end.
-echo .
-
+:: --------------------------------------------------
+:: 错误处理入口
+:: --------------------------------------------------
+:ERROR
+echo.
+echo [FATAL ERROR] 流程因错误中断！
 cd ..
 
-pause
+exit /b 1
